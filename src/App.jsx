@@ -30,8 +30,6 @@ const products = [
     img: p2,
     name: "HYDRATING MOISTURIZER",
     desc: "A lightweight moisturizer enriched with organic aloe, hyaluronic acid, and green tea extract. Instantly hydrates, soothes, and protects your skin for a soft, radiant glow.",
-                    
-                  
   },
   {
     img: p3,
@@ -47,7 +45,6 @@ const products = [
     img: p5,
     name: "FIRMING EYE CREAM",
     desc: "A rich yet gentle eye cream formulated with peptides, hyaluronic acid, and botanical extracts A rich yet gentle eye cream formulated with peptides, helps firm and smooth the delicate eye area, improving elasticity and reducing the appearance of fine lines.",
-                    
   },
   {
     img: p6,
@@ -171,20 +168,37 @@ function App() {
           {/* Mobile menu */}
           {open && (
             <ul className="md:hidden p-4 bg-gray-100 space-y-4">
-              <li className="home text-black hover:text-[#9FCBF4]" id="home">
-                Home
+              <li className="home">
+                <a
+                  href="#home"
+                  className="text-black hover:text-[#9FCBF4] transition-colors duration-300"
+                >
+                  Home
+                </a>
               </li>
-              <li className="about text-black hover:text-[#9FCBF4]" id="about">
-                About
+              <li className="about">
+                <a
+                  href="#about"
+                  className="text-black hover:text-[#9FCBF4] transition-colors duration-300"
+                >
+                  About
+                </a>
               </li>
-              <li
-                className="products text-black hover:text-[#9FCBF4]"
-                id="products"
-              >
-                Products
+              <li className="products">
+                <a
+                  href="#products"
+                  className="text-black hover:text-[#9FCBF4] transition-colors duration-300"
+                >
+                  Products
+                </a>
               </li>
-              <li className="contact hover:text-[#9FCBF4]" id="contact">
-                Contact
+              <li className="contact">
+                <a
+                  href="#contact"
+                  className="text-black hover:text-[#9FCBF4] transition-colors duration-300"
+                >
+                  Contact
+                </a>
               </li>
             </ul>
           )}
@@ -242,10 +256,10 @@ function App() {
         className="text-gray-900 bg-[#F4FAFD] body-font font-[Noto Sans]"
         id="about"
       >
-        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-          <div class=" object-image lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className=" object-image lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              class=" about-cover object-cover object-center rounded"
+              className=" about-cover object-cover object-center rounded"
               alt="about"
               src={img}
             />
@@ -257,7 +271,7 @@ function App() {
               <br className="hidden lg:inline-block" />
               around organic ingredients.
             </h1>
-            <p class="mb-8 leading-relaxed text-[#666666]">
+            <p className="mb-8 leading-relaxed text-[#666666]">
               Inspired by nature and simplicity, our products blend organic
               ingredients with modern skincare science to nourish, protect, and
               enhance your skin’s natural beauty. Each formula is carefully
@@ -278,10 +292,10 @@ function App() {
                 </p>
               </div>
             )}
-            <div class="flex justify-center">
+            <div className="flex justify-center">
               <button
                 onClick={() => setShowMore(!showMore)}
-                class="ml-4 inline-flex text-[#9FCBF4] bg-white border-0 py-2 px-6 focus:outline-none hover:bg-[#9B9DBC] hover:text-white rounded-[19.5px] text-lg transition-all duration-300 hover:animate-bounce"
+                className="ml-4 inline-flex text-[#9FCBF4] bg-white border-0 py-2 px-6 focus:outline-none hover:bg-[#9B9DBC] hover:text-white rounded-[19.5px] text-lg transition-all duration-300 hover:animate-bounce"
               >
                 {showMore ? "Show Less" : "View More"}
               </button>
@@ -335,46 +349,30 @@ function App() {
         </div>
       </section>
 
-      
-
-     
-
-      
-      
-                
-     
-
-      
-
-     
-
-     
-      
-                  
-      <section class="text-[#666666] body-font bg-[#F4FAFD] font-[Noto Sans]">
-        <div class="container mx-auto flex px-6 py-28 md:flex-row flex-col items-center bg-white rounded-3xl shadow-lg">
-          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-12 md:mb-0">
+      <section className="text-[#666666] body-font bg-[#F4FAFD] font-[Noto Sans]">
+        <div className="container mx-auto flex px-6 py-28 md:flex-row flex-col items-center bg-white rounded-3xl shadow-lg">
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-12 md:mb-0">
             <img
-              class="object-cover object-center rounded-2xl shadow-lg"
+              className="object-cover object-center rounded-2xl shadow-lg"
               alt="hero"
               src={p10}
             />
           </div>
 
-          <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-            <h1 class="title-font sm:text-4xl text-3xl mb-6 font-light tracking-wide text-gray-900 leading-snug">
+          <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-6 font-light tracking-wide text-gray-900 leading-snug">
               Try it first with a 7-day trial sample!
             </h1>
 
-            <p class="mb-10 leading-relaxed text-gray-600 max-w-xl">
+            <p className="mb-10 leading-relaxed text-gray-600 max-w-xl">
               Trial Samples are free on orders over{" "}
-              <span class="hidden lg:inline-block text-4xl font-semibold text-gray-800">
+              <span className=" lg:inline-block text-4xl font-semibold text-gray-800">
                 $500
               </span>
             </p>
 
-            <div class="flex justify-center gap-4">
-              <button class="ml-4 inline-flex text-[#9FCBF4] bg-white border-2  border-[#9FCBF4] py-2 px-6 focus:outline-none hover:bg-[#9B9DBC] hover:text-white rounded-[19.5px] text-lg transition-all duration-300 hover:animate-bounce">
+            <div className="flex justify-center gap-4">
+              <button className="ml-4 inline-flex text-[#9FCBF4] bg-white border-2  border-[#9FCBF4] py-2 px-6 focus:outline-none hover:bg-[#9B9DBC] hover:text-white rounded-[19.5px] text-lg transition-all duration-300 hover:animate-bounce">
                 Explore Free Trial
               </button>
             </div>
@@ -472,91 +470,102 @@ function App() {
       </section>
 
       {/* ----------------------footer section------------------- */}
-      <footer class="text-gray-600 body-font bg-[#F4FAFD]">
-        <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col border-t-2 border-[#8F89A0]">
-          <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-            <img src={logo} alt="" class="mb-4" />
-            <p class="text-sm text-gray-500 leading-relaxed">
+      <footer className="text-gray-600 body-font bg-[#F4FAFD]">
+        <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col border-t-2 border-[#8F89A0]">
+          <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+            <img src={logo} alt="" className="mb-4" />
+            <p className="text-sm text-gray-500 leading-relaxed">
               Inspired by nature and simplicity, creating skincare that restores
               balance and beauty.
             </p>
           </div>
 
           <div className="  flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10  md:text-left text-center">
-            <div class="lg:w-1/2 md:w-1/2 w-full px-4">
-              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+            <div className="lg:w-1/2 md:w-1/2 w-full px-4">
+              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
                 PRODUCTS
               </h2>
-              <nav class="list-none mb-10 space-y-2">
+              <nav className="list-none mb-10 space-y-2">
                 <li>
-                  <a class="text-gray-600 hover:text-gray-900">
+                  <a className="text-gray-600 hover:text-gray-900">
                     Moisturizing Serum
                   </a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-900">
+                  <a className="text-gray-600 hover:text-gray-900">
                     Hydrating Moisturizer
                   </a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-900">Eye Serum</a>
+                  <a className="text-gray-600 hover:text-gray-900">Eye Serum</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-900">
+                  <a className="text-gray-600 hover:text-gray-900">
                     Blueberry Miracle
                   </a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-900">Glowing Serum</a>
+                  <a className="text-gray-600 hover:text-gray-900">
+                    Glowing Serum
+                  </a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-900">
+                  <a className="text-gray-600 hover:text-gray-900">
                     Firming Eye Cream
                   </a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-900">
+                  <a className="text-gray-600 hover:text-gray-900">
                     Skincare Collection
                   </a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-900">
+                  <a className="text-gray-600 hover:text-gray-900">
                     Age Defying Cream
                   </a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-900">
+                  <a className="text-gray-600 hover:text-gray-900">
                     Concentrated Serum
                   </a>
                 </li>
               </nav>
             </div>
 
-            <div class="lg:w-1/2 md:w-1/2 w-full px-4">
-              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+            <div className="lg:w-1/2 md:w-1/2 w-full px-4">
+              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
                 NAVIGATION
               </h2>
-              <nav class="list-none mb-10 space-y-2">
+              <nav className="list-none mb-10 space-y-2">
                 <li>
-                  <a href="#home" class="text-gray-600 hover:text-[#9FCBF4]">
+                  <a
+                    href="#home"
+                    className="text-gray-600 hover:text-[#9FCBF4]"
+                  >
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#about" class="text-gray-600 hover:text-[#9FCBF4]">
+                  <a
+                    href="#about"
+                    className="text-gray-600 hover:text-[#9FCBF4]"
+                  >
                     About
                   </a>
                 </li>
                 <li>
                   <a
                     href="#products"
-                    class="text-gray-600 hover:text-[#9FCBF4]"
+                    className="text-gray-600 hover:text-[#9FCBF4]"
                   >
                     Products
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" class="text-gray-600 hover:text-[#9FCBF4]">
+                  <a
+                    href="#contact"
+                    className="text-gray-600 hover:text-[#9FCBF4]"
+                  >
                     Contact
                   </a>
                 </li>
@@ -565,13 +574,13 @@ function App() {
           </div>
         </div>
 
-        <div class=" text-gray-600 body-font bg-[#F4FAFD]">
-          <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row items-center border-t-2 border-[#8F89A0]">
-            <p class="text-gray-500 text-sm text-center sm:text-left">
+        <div className=" text-gray-600 body-font bg-[#F4FAFD]">
+          <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row items-center border-t-2 border-[#8F89A0]">
+            <p className="text-gray-500 text-sm text-center sm:text-left">
               © 2025 Adeña Japanese Skincare. All rights reserved.
             </p>
 
-            <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></span>
+            <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></span>
           </div>
         </div>
       </footer>
