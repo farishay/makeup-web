@@ -73,6 +73,7 @@ function App() {
   const [open, setOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState(products);
+  const [hoveredProduct, setHoveredProduct] = useState(null);
 
   const tickerRef = useRef(null);
 
@@ -330,13 +331,18 @@ function App() {
           <div className="flex flex-wrap -m-4">
             {filteredProducts.map((product, index) => (
               <div key={index} className="p-4 lg:w-1/3 w-full">
-                <div className="relative h-96 rounded-lg overflow-hidden cursor-pointer group">
+                <div 
+                  className="relative h-96 rounded-lg overflow-hidden cursor-pointer group"
+                  onMouseEnter={() => setHoveredProduct(index)}
+                  onMouseLeave={() => setHoveredProduct(null)}
+                  onClick={() => setHoveredProduct(hoveredProduct === index ? null : index)}
+                >
                   <img
                     src={product.img}
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2"
                   />
-                  <div className="absolute inset-0 bg-[#EDEFED]/50 flex flex-col justify-center items-center text-center text-[#666666] px-4 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div className={`absolute inset-0 bg-[#EDEFED]/50 flex flex-col justify-center items-center text-center text-[#666666] px-4 transition-opacity duration-500 ${hoveredProduct === index ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
                     <h2 className="tracking-widest text-sm font-medium mb-1 text-[#666666]">
                       {product.name}
                     </h2>
