@@ -1,0 +1,151 @@
+@import "tailwindcss";
+@keyframes reveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+.animate-reveal {
+  animation: reveal 5s ease-in-out;
+}
+
+.holistic {
+  font-size: 64px;
+  line-height: 1.2;
+}
+
+/* Scroll Animation Styles */
+section#about {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 1s ease-out,
+    transform 1s ease-out;
+}
+
+section#about.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section#about .about-image {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition:
+    opacity 1s ease-out 0.2s,
+    transform 1s ease-out 0.2s;
+}
+
+section#about.visible .about-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+section#about .about-content {
+  opacity: 0;
+  transform: translateX(50px);
+  transition:
+    opacity 1s ease-out 0.3s,
+    transform 1s ease-out 0.3s;
+}
+
+section#about.visible .about-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* footer */
+/* Video Slow Zoom Animation */
+@keyframes slow-zoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s ease-in-out infinite;
+}
+
+/* Floating Circles */
+.floating-circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(159, 203, 244, 0.3),
+    rgba(234, 216, 252, 0.3)
+  );
+  top: 10%;
+  left: 10%;
+  animation: float 15s ease-in-out infinite;
+  filter: blur(40px);
+}
+
+.floating-circle-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(234, 216, 252, 0.3),
+    rgba(155, 157, 188, 0.3)
+  );
+  bottom: 10%;
+  right: 10%;
+  animation: float 20s ease-in-out infinite reverse;
+  filter: blur(50px);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+}
+
+/* Form Slide In Animation */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 1s ease-out;
+}
+
+/* Search Input Glow Animation */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(159, 203, 244, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(159, 203, 244, 0.8), 0 0 30px rgba(234, 216, 252, 0.6);
+  }
+}
+
+.search-glow:focus {
+  animation: glow 2s ease-in-out infinite;
+}
